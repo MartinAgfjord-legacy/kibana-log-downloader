@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 if [ -z "$KIBANA_HOST" ]; then
-    echo "KIBANA_HOST must be set, terminating"
+    echo "KIBANA_HOST must be set, you can set it in settings.sh"
     exit 1
 fi
 
@@ -20,7 +20,7 @@ fi
 ORIGIN_HOST=$1
 OUTPUT_FILE="kibana.log"
 
-java -Dkibana_host=$KIBANA_HOST -Dorigin_host=$ORIGIN_HOST $BEFORE -jar ./target/console-application-1.0-SNAPSHOT-jar-with-dependencies.jar > $OUTPUT_FILE
+java -Dkibana_host=$KIBANA_HOST -Dorigin_host=$ORIGIN_HOST $BEFORE -jar ./target/kibana-log-downloader-1.0-SNAPSHOT-jar-with-dependencies.jar > $OUTPUT_FILE
 
 if [ $? == 0 ]; then
     echo "Wrote results to $OUTPUT_FILE"
