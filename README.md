@@ -1,4 +1,4 @@
-# Kibana Console Application
+# Kibana Log Downloader
 
 # Run with Bash-script
 ```
